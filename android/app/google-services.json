@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427788377560",
+    "project_id": "fir-fluttertest-c6aa7",
+    "storage_bucket": "fir-fluttertest-c6aa7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427788377560:android:fea8ace83f0b08a7efe6ad",
+        "android_client_info": {
+          "package_name": "com.alsonstechnology.firebasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427788377560-kp1vstbsrgd7avc8g74akvjhov5v3pmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxs9Ewfg8WQrh_RWqXl6cZgxBH1RbgYIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427788377560-kp1vstbsrgd7avc8g74akvjhov5v3pmf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
