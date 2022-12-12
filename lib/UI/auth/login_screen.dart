@@ -1,3 +1,4 @@
+import 'package:firebasetest/UI/auth/login_with_phone_number.dart';
 import 'package:firebasetest/UI/post_screen.dart';
 import 'package:firebasetest/utils/utils.dart';
 import 'package:firebasetest/widgets/round_button.dart';
@@ -14,7 +15,7 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
-  bool loading= false;
+  bool loading = false;
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -29,18 +30,18 @@ class _loginScreenState extends State<loginScreen> {
     passwordController.dispose();
   }
 
-  void login(){
+  void login() {
     setState(() {
       loading = true;
     });
-    _auth.signInWithEmailAndPassword(
-        email: emailController.text.toString(),
-        password: passwordController.text.toString()
-    ).then((value) {
+    _auth
+        .signInWithEmailAndPassword(
+            email: emailController.text.toString(),
+            password: passwordController.text.toString())
+        .then((value) {
       utils().toastMessage(value.user!.email.toString());
-      Navigator.push(context,
-        MaterialPageRoute(builder: (context)=> postScreen())
-      );
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => postScreen()));
       setState(() {
         loading = false;
       });
@@ -55,7 +56,7 @@ class _loginScreenState extends State<loginScreen> {
 
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: ()async{
+      onWillPop: () async {
         SystemNavigator.pop();
         return true;
       },
@@ -129,14 +130,30 @@ class _loginScreenState extends State<loginScreen> {
                   Text("don't have an account? "),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.push(
+                          context,
                           MaterialPageRoute(
-                              builder:(context)=>signUpScreen())
-                      );
+                              builder: (context) => signUpScreen()));
                     },
                     child: Text("Sign up"),
                   )
                 ],
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=> loginWithPhoneNumber()));
+                },
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(color: Colors.black)
+                  ),
+                  child: Center(
+                    child: Text("Login with phone"),
+                  ),
+                ),
               )
             ],
           ),
