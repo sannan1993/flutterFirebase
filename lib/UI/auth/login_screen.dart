@@ -71,6 +71,7 @@ class _loginScreenState extends State<loginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Expanded(flex: 10,child: Container()),
               Form(
                   key: _formKey,
                   child: Column(
@@ -109,9 +110,7 @@ class _loginScreenState extends State<loginScreen> {
                       ),
                     ],
                   )),
-              const SizedBox(
-                height: 10,
-              ),
+              Expanded(flex: 1,child: Container()),
               roundButton(
                 title: "login",
                 loading: loading,
@@ -120,9 +119,6 @@ class _loginScreenState extends State<loginScreen> {
                     login();
                   }
                 },
-              ),
-              SizedBox(
-                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -140,21 +136,23 @@ class _loginScreenState extends State<loginScreen> {
                 ],
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> loginWithPhoneNumber()));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => loginWithPhoneNumber()));
                 },
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(color: Colors.black)
-                  ),
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(color: Colors.black)),
                   child: Center(
                     child: Text("Login with phone"),
                   ),
                 ),
-              )
+              ),
+              Expanded(flex: 10,child: Container()),
             ],
           ),
         ),

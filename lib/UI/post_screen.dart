@@ -1,3 +1,4 @@
+import 'package:firebasetest/UI/add_post.dart';
 import 'package:firebasetest/UI/auth/login_screen.dart';
 import 'package:firebasetest/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _postScreenState extends State<postScreen> {
               _auth.signOut().then((value) {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => loginScreen()));
-              }).onError((error, stackTrace)  {
+              }).onError((error, stackTrace) {
                 utils().toastMessage(error.toString());
               });
             },
@@ -34,6 +35,12 @@ class _postScreenState extends State<postScreen> {
             width: 10,
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> addPostScreen()));
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
